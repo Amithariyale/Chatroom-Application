@@ -30,20 +30,23 @@ body {
     background-color: rgba(93, 207, 93, 0.712);
     box-shadow: 0 0 100px 10px green;
 }
-#form div{
+
+#form div {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
 }
-#username{
+
+#username {
     border: none;
     border-radius: 5px;
     padding: 5px;
 
 }
 
-#join-btn,#send-btn{
+#join-btn,
+#send-btn {
     padding: 6px;
     border: none;
     border-radius: 5px;
@@ -52,15 +55,18 @@ body {
     color: white;
     transition: background-color 0.2s ease;
 }
-#send-btn:hover,#join-btn:hover{
+
+#send-btn:hover,
+#join-btn:hover {
     background-color: rgb(1, 79, 1);
 }
 
 /* Chatroom styles */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
-#chatroom{
+
+#chatroom {
     display: none;
     min-width: 380px;
     max-width: 500px;
@@ -72,14 +78,18 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-#header{
+#header {
     background-color: rgba(30, 73, 34, 0.859);
     display: flex;
     justify-content: space-between;
     padding: 5px;
 }
 
-#messages{
+#exit-btn {
+    cursor: pointer;
+}
+
+#messages {
     overflow-y: scroll;
     flex: 1;
     display: flex;
@@ -88,28 +98,31 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-inline: 10px;
-    
+
 }
 
-.message{
+.message {
     background-color: rgba(17, 16, 16, 0.781);
     padding: 5px;
-    
+
 }
 
-.sent{
+.sent {
     align-self: flex-end;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
-.received{
+
+.received {
     align-self: flex-start;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
-.joined{
+
+.joined,
+.left {
     background-color: rgba(0, 0, 0, 0.864);
     color: lightgray;
     font-size: 11px;
@@ -117,13 +130,14 @@ body {
     padding: 5px;
     border-radius: 5px;
 }
-#message-input-container{
+
+#message-input-container {
     display: flex;
     padding: 2px;
     gap: 2px;
 }
 
-#message-input{
+#message-input {
     flex: 1;
     padding-inline: 5px;
     outline: none;

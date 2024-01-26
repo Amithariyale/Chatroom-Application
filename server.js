@@ -13,6 +13,9 @@ io.on("connection", (socket) => {
   socket.on("sendMessage", (data) => {
     io.emit("sendMessage", data);
   });
+  socket.on("exit", (data) => {
+    io.emit("exit", data);
+  });
 });
 
 const PORT = 3000;

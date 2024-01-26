@@ -4,6 +4,8 @@ const chatroomUser = document.getElementById("chatroom_user");
 const messageContainer = document.getElementById("messages");
 const sendBtn = document.getElementById("message-input-container");
 const messageInput = document.getElementById("message-input");
+const exitBtn = document.getElementById("exit-btn");
+
 const socket = io();
 let username;
 
@@ -29,6 +31,13 @@ sendBtn.addEventListener("submit", (e) => {
   socket.emit("sendMessage", { username, message });
   e.target.reset();
 });
+
+exitBtn.addEventListener("click", () => {
+  socket.emit("exit", username);
+  form.style.display = "flex";
+  chatroom.style.display = "none";
+});
+
 socket.on("joined", (newUser) => {
   if (newUser !== username) {
     messageContainer.innerHTML += `
@@ -39,6 +48,14 @@ socket.on("joined", (newUser) => {
 
 socket.on("sendMessage", (data) => {
   showMessage(data);
+});
+
+socket.on("exit", (leftUser) => {
+  if (leftUser !== username) {
+    messageContainer.innerHTML += `
+    <div class="left">${leftUser} has left the chatroom</div>
+    `;
+  }
 });
 
 function showMessage(data) {
