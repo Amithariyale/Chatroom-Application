@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatroom</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
 
+<body>
+    <form id="form">
+        <h1>Join Chatroom</h1>
+        <div>
+            <label for="username">Username :</label>
+            <input type="text" id="username" placeholder="Enter Username">
+        </div>
+        <button id="join-btn" type="submit">Join Chat</button>
+    </form>
+
+    <!-- Chat Room -->
+
+    <div id="chatroom">
+        <div id="header">
+            <div id="chatroom_user"></div>
+            <div id="exit-btn">Exit</div>
+        </div>
+        <div id="messages">
+            <!-- <div class="message received">Hey</div> -->
+            <!-- <div class="message sent">Hello hi</div> -->
+            <!-- <div class="joined">Amit has joined the chatroom</div> -->
+        </div>
+        <form id="message-input-container">
+            <input type="text" id="message-input" placeholder="Type a message">
+            <button id="send-btn">Send</button>
+        </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
